@@ -6,7 +6,7 @@ The new site for coding is [http://microbit.org/code/]
 They want you to get started quickly and easily, 
 so most of the ways you are encouraged to code 
 involve online code building tools that run in your browser. 
-These sites (also sometimes called REPLs) allow you to 
+These sites allow you to 
 build up your code and see the results in an emulator, 
 before downloading the compiled HEX file to flash to your micro:bit. 
 
@@ -44,7 +44,8 @@ that lets you know when you are 'flashing' your code.
 They say flashing because in the 1970s some Read Only Memory (ROMs) 
 needed to have a strong UV light shined on them to wipe their old contents 
 before you could upload a new program onto them. When NAND memory was invented 
-in the late 1980s it was called flash memory as it 'flashed' itself without light. Now most permanent storage chips are based on flash memory, but 
+in the late 1980s it was called flash memory as it 'flashed' itself without light. 
+Now most permanent storage chips are based on flash memory, but 
 search for EPROM if you want to find out more on the history. 
 
 
@@ -74,15 +75,94 @@ The source is [https://github.com/bbcmicrobit/micropython]
 
 ### Mu editor
 
+
+#### Installing
+
+As we are still [waiting for an upstream .deb](https://github.com/mu-editor/mu/issues/58) you should use the latest **`.deb`** file from the official downloads location. I know it says Raspberry Pi but it seems to work on Ubuntu too :)
+
+[http://ardublockly-builds.s3-website-us-west-2.amazonaws.com/?prefix=microbit/raspberry_pi/]
+
+Install it with
+
+```
+sudo dpkg -i mu-*.deb
+sudo apt-get -f install
+```
+
 * source [https://github.com/mu-editor/mu]
-* 3rd party suggested instructions [http://sakarinkurssit.blogspot.co.uk/2016/11/how-to-get-mu-editor-for-microbit-up.html]
-* unofficial linux downloads:
-	- [http://blog.gbaman.info/?p=727]
-	- 
+* release downloads [https://codewith.mu/#download]
+
+#### Troubleshooting
+
+* if the executable fails with a `Permission denied`
+	- make the .bin file executable
+		+ `chmod +x mu-x.y.zz.bin`
+* if the executable fails with a `Segmentation fault`
+	- ensure you are in the dialout group
+		+ `sudo usermod -a -G dialout $USER`
+* if you get other weird errors:
+	- ensure you have all dependencies installed
+
+#### Settings and locations
+
+Files     | Location
+----------|---------
+Code      | ~/mu_code  (can be overridden in settings)
+Settings  | ~/.local/share/mu/settings.json
+Logs      | ~/.cache/mu/log/mu.log
+
+
+
+#### old install
+
+```
+# Previous instructions
+#
+# still waiting for an upstream .deb [https://github.com/mu-editor/mu/issues/58]
+#
+# so follow the download install instructions at [https://codewith.mu/#download]
+
+# then make the file executable
+chmod +x mu-*.bin
+# ensure you are in the dialout group
+sudo usermod -a -G dialout $USER
+
+
+### RUNTIME DEPENDENCIES
+
+# according to [https://github.com/mu-editor/mu/issues/161]
+# the only runtime dependencies are:
+sudo apt-get install python3-pyqt5.qsci python3-pyqt5.qtserialport
+# which will pull python3-pyqt5 automatically as their own dependency
+#
+# Alternatively you could  install Runtime dependencies (expect python3-setuptools) from 
+# https://github.com/mu-editor/mu/blob/master/debian/control
+sudo apt-get install python3-pyqt5 python3-pyqt5.qsci python3-pyqt5.qtserialport python3-serial python3-pep8 pyflakes
+```
+
+also tried 
+
+```
+sudo apt-get install python3-setuptools python3-pip
+wget https://raw.githubusercontent.com/mu-editor/mu/master/requirements.txt
+wget https://raw.githubusercontent.com/mu-editor/mu/master/setup.py
+sudo pip3 install requirements.txt
+sudo python3 setup.py install
+```
+
+Notes:
+
+* [https://github.com/mu-editor/mu/blob/master/requirements.txt] is designed to be used with pip, but do we need to install all the python setup tools just for this? 
+* Especially if the devs have not yet clarified the [difference between runtime and build dependencies](https://github.com/mu-editor/mu/issues/217)
+* This is the suggested pip3 install method [https://github.com/mu-editor/mu/issues/239]
+
 
 
 
 ## OUT
+
+What do micro:bit folk mean by REPLs? The term is used ambiguously in different places.
+
 
 ### ARM mbed
 
