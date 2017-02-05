@@ -33,6 +33,7 @@ Try one of the two simplest scripting tools below.
 
 [https://pxt.microbit.org/]
 
+
 ## Flashing your code
 
 Flashing code onto the micro:bit is how you get your program on there. 
@@ -60,6 +61,11 @@ be patient (or unplug and replug it) so the driver auto-installs properly.
 
 Once you have your micro:bit drive just copy and paste your compiled .HEX file 
 into there, and you will see the orange LED on the back flash as the binary is uploaded.
+
+## Other editors
+
+The new online Python Editor [python.microbit.org], 
+which also supports [saving .py files to your local disk](https://support.microbit.org/support/solutions/articles/19000021644-save-and-load-python-scripts-from-the-web-editor)
 
 
 ## Ubuntu
