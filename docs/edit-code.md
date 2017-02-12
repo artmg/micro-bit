@@ -47,11 +47,19 @@ take a look at MicroPython.
 * rich and powerful language
 * [https://python.microbit.org]
 * language reference [https://microbit-micropython.readthedocs.io/en/latest]
-	- examples with custom images [http://www.getmicros.net/image-examples-microbit-using-micropython.php]
+	- see some interesting stuff with `Image` class [http://microbit-micropython.readthedocs.io/en/latest/image.html]
+	- roughly based on `MicroPython for pyboard` [https://docs.micropython.org/en/latest/pyboard/reference/index.html]
+	- which is based on Python 3.4 [https://docs.python.org/3.4/reference/index.html]
 * no built in simulator
 	* for a simulator see [https://create.withcode.uk/]
-	* you will see the microbit emulator appear if you run code with the directive `from microbit import *`
-* 
+	* where you will see the microbit emulator appear if you run code with the directive `from microbit import *`
+* Language hints
+	* Cheat sheet [https://microbit-playground.co.uk/cheat-sheet/]
+	* remember python `for loops` are a little weird:
+		+ `for i in xrange(10)` - does 0 to 9
+		+ `for i in xrange(2,8)` - does 2 to 7
+		+ `for i in xrange(7,1,-1)` - does 7 to 2
+		+ `for a in ["X","Y","A","B"]` - does X Y then A B
 
 
 ## Flashing your code
@@ -184,10 +192,16 @@ Notes:
 
 
 
+## REPL
+
+REPL stands for Read-Eval-Print-Loop, which is a slightly obscure way of referring to the _interactive interpreter_, what most people would think of as the _command line / shell / terminal_. 
+
+As it's a MicroPython interpreter, see examples of some of the things you could type into it, and how it might respond: [https://docs.micropython.org/en/latest/pyboard/reference/repl.html]
+
+If you're really interested in accessing it, you'll need to use a _serial_ connection - see [http://microbit-micropython.readthedocs.io/en/latest/devguide/repl.html], and example Linux commands in [https://forum.micropython.org/viewtopic.php?t=2225#p12697]
+
 
 ## OUT
-
-What do micro:bit folk mean by REPLs? The term is used ambiguously in different places.
 
 
 ### ARM mbed
