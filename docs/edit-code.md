@@ -11,7 +11,11 @@ build up your code and see the results in an emulator,
 before downloading the compiled HEX file to flash to your micro:bit. 
 
 It's incredibly easy so just dive in :) 
-Try one of the two simplest scripting tools below. 
+
+Try one of the two simplest scripting tools below, 
+allowing a progressing from block building to code writing, 
+or for a more powerful range of features, 
+take a look at MicroPython.
 
 
 ### Code Kingdoms - JavaScript
@@ -19,7 +23,8 @@ Try one of the two simplest scripting tools below.
 * Nice, easy, editor to get started 
 * write simple event-driven code
 * switch between block edit view and full text code views
-* coding environment allows you to start New projects in other langauges
+* coding environment allows you to start New projects in other languages
+* see instant results from the in-page simulator
 
 [https://www.microbit.co.uk/app/]
 
@@ -29,9 +34,24 @@ Try one of the two simplest scripting tools below.
 * good help system including tutorials 
 * lots of block functions available
 * switch easily between block editor and code editor
+* see instant results from the in-page simulator
 * New Projects always in PXT
+* some functions not implemented
+	- e.g. exponentiation (x ** y - x to the power of y)
 
 [https://pxt.microbit.org/]
+
+
+### MicroPython
+
+* rich and powerful language
+* [https://python.microbit.org]
+* language reference [https://microbit-micropython.readthedocs.io/en/latest]
+	- examples with custom images [http://www.getmicros.net/image-examples-microbit-using-micropython.php]
+* no built in simulator
+	* for a simulator see [https://create.withcode.uk/]
+	* you will see the microbit emulator appear if you run code with the directive `from microbit import *`
+* 
 
 
 ## Flashing your code
